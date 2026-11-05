@@ -497,7 +497,7 @@ export const APPROVED_SPECIALITIES = [
     shortDescription: "Compassionate, confidential care to help you manage anxiety, depression, stress, and sleep concerns.",
     introduction: "Psychiatry helps people manage mental health concerns such as anxiety, depression, stress, and sleep problems. Our specialists assess each person's needs and recommend suitable care.",
     heroImage: "/images/specialities/psychiatry.webp",
-    imageAlt: "Illustration representing brain health and mental well-being",
+    imageAlt: "Compassionate mental wellness, emotional calm, and behavioral healthcare illustration",
     conditions: [
       "Anxiety disorders, excessive worry, and sudden panic attacks",
       "Depression, persistent sadness, low energy, and loss of interest",

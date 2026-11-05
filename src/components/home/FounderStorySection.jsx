@@ -6,10 +6,10 @@ import { useAppointmentModal } from "../../context/AppointmentModalContext";
 
 /**
  * FounderStorySection Component
- * - Removed sloppy logo pills as requested.
- * - Restored the authentic curved pedestal plinth with full 3D depth effect (matching Image 3).
- * - "OUR PHILOSOPHY" and "THE JOURNEY" are live editable HTML text, seamlessly blended with NO boxy cards.
- * - Action CTAs at bottom.
+ * Serving as the primary opening landing page section.
+ * - Restored authentic curved pedestal plinth with 3D depth effect.
+ * - Live editorial HTML text seamlessly blended.
+ * - Direct welcome and clear action CTAs.
  */
 export function FounderStorySection() {
   const sectionRef = useRef(null);
@@ -37,7 +37,7 @@ export function FounderStorySection() {
     <section
       ref={sectionRef}
       id="founder-story"
-      className="relative w-full py-8 sm:py-10 lg:py-12 overflow-hidden scroll-mt-20 border-t border-[#EFE5DC]"
+      className="relative w-full pt-24 sm:pt-28 lg:pt-32 xl:pt-36 pb-12 sm:pb-14 lg:pb-16 overflow-hidden scroll-mt-20"
       style={{
         background:
           "radial-gradient(ellipse at 50% 28%, #FFFDF9 0%, #FAF2EB 38%, #F4E8DC 75%, #ECD9CC 100%)",
@@ -63,7 +63,7 @@ export function FounderStorySection() {
         animate={isInView ? "visible" : "hidden"}
         className="relative z-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8"
       >
-        {/* ── TOP SECTION HEADER (Live Editable Code) ── */}
+        {/* ── TOP SECTION HEADER (Live Editorial Header) ── */}
         <motion.div variants={itemVariants} className="text-center max-w-3xl mx-auto mb-6 sm:mb-8">
           <div className="flex items-center justify-center gap-3 sm:gap-4 mb-2.5">
             <span className="w-8 sm:w-16 h-[1.5px] bg-gradient-to-r from-transparent to-[#E94B1C]" />
@@ -73,13 +73,13 @@ export function FounderStorySection() {
             <span className="w-8 sm:w-16 h-[1.5px] bg-gradient-to-l from-transparent to-[#E94B1C]" />
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-[#14233C] tracking-tight leading-[1.15]">
+          <h1 className="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[50px] font-bold text-[#14233C] tracking-tight leading-[1.15]">
             A Vision{" "}
             <span className="bg-gradient-to-r from-[#E94B1C] via-[#FF6B35] to-[#E94B1C] bg-clip-text text-transparent">
               Beyond
             </span>{" "}
             Medicine.
-          </h2>
+          </h1>
 
           <p className="mt-2.5 text-base sm:text-lg text-[#5A687A] font-medium tracking-normal max-w-xl mx-auto">
             Years of experience. A deeper purpose. A healthier Anantapur.
@@ -89,7 +89,7 @@ export function FounderStorySection() {
         {/* ── MAIN 3-COLUMN SHOWCASE: NO SLOPPY LOGOS, DEEP 3D PLINTH ── */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-center">
           
-          {/* 1. LEFT COLUMN: OUR PHILOSOPHY (Clean editorial text, NO sloppy logo, NO white box) */}
+          {/* 1. LEFT COLUMN: OUR PHILOSOPHY */}
           <motion.div
             variants={itemVariants}
             className="lg:col-span-3 xl:col-span-3 flex flex-col justify-center order-2 lg:order-1 text-left px-2 sm:px-4"
@@ -100,9 +100,9 @@ export function FounderStorySection() {
             </div>
 
             {/* Heading */}
-            <h3 className="font-serif text-2xl sm:text-[28px] font-bold text-[#14233C] leading-snug mb-4">
+            <h2 className="font-serif text-2xl sm:text-[28px] font-bold text-[#14233C] leading-snug mb-4">
               Care begins with listening.
-            </h3>
+            </h2>
 
             {/* Body Quote */}
             <p className="text-[14.5px] sm:text-[15px] text-[#4A5568] leading-[1.8] font-normal">
@@ -110,7 +110,7 @@ export function FounderStorySection() {
             </p>
           </motion.div>
 
-          {/* 2. CENTER COLUMN: 3D DOCTOR WITH THE AUTHENTIC CURVED PEDESTAL PLINTH (MATCHING IMAGE 3) */}
+          {/* 2. CENTER COLUMN: 3D DOCTOR WITH THE AUTHENTIC CURVED PEDESTAL PLINTH */}
           <motion.div
             variants={itemVariants}
             className="lg:col-span-6 xl:col-span-6 flex flex-col items-center justify-center order-1 lg:order-2"
@@ -119,7 +119,7 @@ export function FounderStorySection() {
               {/* Subtle back-glow */}
               <div className="absolute inset-0 -m-4 rounded-3xl bg-gradient-to-b from-[#E94B1C]/[0.06] via-transparent to-[#FF8A3D]/[0.04] blur-2xl pointer-events-none" />
 
-              {/* Exact Curved Pedestal Plinth Artwork with Doctor, 3D Typography & Stats (Matching Image 3) */}
+              {/* Exact Curved Pedestal Plinth Artwork with Doctor, 3D Typography & Stats */}
               <div className="relative z-10 transition-transform duration-500 ease-out group-hover:scale-[1.015]">
                 <img
                   src="/images/founder-depth-hero.png"
@@ -142,7 +142,7 @@ export function FounderStorySection() {
             </div>
           </motion.div>
 
-          {/* 3. RIGHT COLUMN: THE JOURNEY (Clean editorial text, NO sloppy logo, NO white box) */}
+          {/* 3. RIGHT COLUMN: THE JOURNEY */}
           <motion.div
             variants={itemVariants}
             className="lg:col-span-3 xl:col-span-3 flex flex-col justify-center order-3 text-left px-2 sm:px-4"
@@ -153,9 +153,9 @@ export function FounderStorySection() {
             </div>
 
             {/* Heading */}
-            <h3 className="font-serif text-2xl sm:text-[28px] font-bold text-[#14233C] leading-snug mb-4">
+            <h2 className="font-serif text-2xl sm:text-[28px] font-bold text-[#14233C] leading-snug mb-4">
               From a small clinic to a complete care center.
-            </h3>
+            </h2>
 
             {/* 3 Story Paragraphs (100% Live Editable Text) */}
             <div className="space-y-3.5 text-[14px] text-[#4A5568] leading-[1.72]">

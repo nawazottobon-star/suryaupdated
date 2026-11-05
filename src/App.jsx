@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { MobileBottomBar } from "./components/layout/MobileBottomBar";
+import { FloatingActionButtons } from "./components/layout/FloatingActionButtons";
+import { FloatingQRWidget } from "./components/layout/FloatingQRWidget";
 import { ScrollToTop } from "./components/layout/ScrollToTop";
 import { AppointmentModalProvider } from "./context/AppointmentModalContext";
 
@@ -37,6 +39,12 @@ export function App() {
           {/* 4. Reusable Navbar that appears consistently on every page */}
           <Navbar />
 
+          {/* Persistent Floating Quick-Action Bar (Right Middle: Call, WhatsApp) */}
+          <FloatingActionButtons />
+
+          {/* Persistent Floating Google Maps QR Widget (Right Bottom: shakes to draw attention) */}
+          <FloatingQRWidget />
+
           {/* Route Pages Container */}
           <main className="w-full flex-1 pb-18 lg:pb-0">
             <Suspense fallback={<RouteFallback />}>
@@ -45,8 +53,8 @@ export function App() {
                 <Route path="/about" element={<AboutPage />} />
                 <Route path="/doctors" element={<DoctorsPage />} />
                 <Route path="/specialities" element={<SpecialitiesPage />} />
-                <Route path="/specialities/:slug" element={<SpecialityDetailPage />} />
                 <Route path="/departments" element={<Navigate to="/specialities" replace />} />
+                <Route path="/specialities/:slug" element={<SpecialityDetailPage />} />
                 <Route path="/departments/:slug" element={<SpecialityDetailPage />} />
                 <Route path="/services" element={<Navigate to="/specialities" replace />} />
                 <Route path="/services/:slug" element={<SpecialityDetailPage />} />

@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Respect EXIF orientation in all images sitewide */
+img {
+  image-orientation: from-image;
+}
+
 
 @layer base {
   :root {
@@ -540,5 +545,46 @@
   .hover-blink-card:hover .placeholder-shape,
   .placeholder-shape:hover {
     animation: placeholderShapeBlink 0.75s ease-in-out infinite !important;
+  }
+
+  /* More Dynamic & Energetic Attention-Grabbing Shake for Floating QR */
+  @keyframes qrAttentionShake {
+    0%, 55%, 100% {
+      transform: rotate(0deg) translate(0, 0) scale(1);
+    }
+    60% {
+      transform: rotate(-9deg) translate(-2px, -2px) scale(1.06);
+    }
+    65% {
+      transform: rotate(9deg) translate(2px, -1px) scale(1.06);
+    }
+    70% {
+      transform: rotate(-8deg) translate(-2px, 1px) scale(1.05);
+    }
+    75% {
+      transform: rotate(8deg) translate(2px, 0) scale(1.05);
+    }
+    80% {
+      transform: rotate(-5deg) translate(-1px, 0) scale(1.03);
+    }
+    85% {
+      transform: rotate(5deg) translate(1px, 0) scale(1.03);
+    }
+    90% {
+      transform: rotate(-2deg) translate(0, 0) scale(1.01);
+    }
+    95% {
+      transform: rotate(1deg) translate(0, 0) scale(1);
+    }
+  }
+
+  .qr-attention-wiggle {
+    animation: qrAttentionShake 2.8s ease-in-out infinite;
+    transform-origin: center bottom;
+  }
+
+  .qr-attention-wiggle:hover {
+    animation-play-state: paused;
+    transform: scale(1.05);
   }
 }

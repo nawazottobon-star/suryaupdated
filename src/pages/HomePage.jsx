@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
-import { HomeHero } from "../components/home/HomeHero";
 import { FounderStorySection } from "../components/home/FounderStorySection";
-import { ClinicalServicesBento } from "../components/home/ClinicalServicesBento";
-import { SpecialtiesDoctorsPoster } from "../components/home/SpecialtiesDoctorsPoster";
+import { SpecialtiesScrollSection } from "../components/home/SpecialtiesScrollSection";
+import { FacilitiesServicesSection } from "../components/home/FacilitiesServicesSection";
 import { TestimonialCarousel } from "../components/home/TestimonialCarousel";
 import { InsuranceCashlessSection } from "../components/home/InsuranceCashlessSection";
-import { HomeAppointmentCta } from "../components/home/HomeAppointmentCta";
 
 export function HomePage() {
   useEffect(() => {
@@ -14,26 +12,20 @@ export function HomePage() {
 
   return (
     <div className="w-full bg-[#FFF9F3]">
-      {/* 1. Hero Section with Concise Founder Introduction & Building Video */}
-      <HomeHero />
-
-      {/* 1B. Dedicated Founder Story Section: "The Vision Behind Our Care" */}
+      {/* Section 1: Founder Section (New First Hero Section) */}
       <FounderStorySection />
 
-      {/* 2. Comprehensive Clinical Care Services & Diagnostics (Inline Expandable Bento) */}
-      <ClinicalServicesBento />
+      {/* Section 2: Hospital Specialities with Intuitive Images & Card Scrolling Effect */}
+      <SpecialtiesScrollSection />
 
-      {/* 5. Complete 12 Specialties & 19 Doctors Section matching reference poster */}
-      <SpecialtiesDoctorsPoster />
+      {/* Section 3: Facilities & Services (Real Photos & Video Walkthroughs) */}
+      <FacilitiesServicesSection />
 
-      {/* 6. Patient Stories & Testimonials 3-Card Carousel */}
+      {/* Section 4: Patient Stories & Verified Testimonials Carousel */}
       <TestimonialCarousel />
 
-      {/* 7. Insurance & Cashless Facility Section (24 Partners Grid) */}
+      {/* Section 5: Insurance & Cashless Partners (24 Partners Grid) */}
       <InsuranceCashlessSection />
-
-      {/* 8. Take the First Step Appointment Booking CTA Section */}
-      <HomeAppointmentCta />
     </div>
   );
 }
