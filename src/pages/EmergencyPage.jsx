@@ -201,7 +201,7 @@ export function EmergencyPage() {
                 Surya Hospital Emergency Entrance
               </h4>
               <p className="text-xs text-[#756860]">
-                12-3-367, 9th Cross Road, behind Ambedkar Bhavan, Sai Nagar, Anantapur.
+                Sainagar, 9th Cross, Anantapur - 515001.
               </p>
             </div>
             <a

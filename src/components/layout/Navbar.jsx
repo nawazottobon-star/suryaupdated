@@ -359,10 +359,17 @@ export function Navbar() {
               <button
                 type="button"
                 onClick={() => openModal()}
-                className="animate-cta-blink inline-flex items-center gap-1.5 sm:gap-2 px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-[13px] font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] transition-all active:scale-[0.98] cursor-pointer whitespace-nowrap shrink-0 shadow-xs"
+                className="animate-cta-blink flex flex-col items-center justify-center px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-2xl sm:rounded-full text-white bg-[#E94B1C] hover:bg-[#A83218] transition-all active:scale-[0.98] cursor-pointer whitespace-nowrap shrink-0 shadow-md group"
+                title={`Book Appointment or Call ${HOSPITAL_INFO.phone}`}
               >
-                <span>Book Appointment</span>
-                <ArrowRight className="w-3.5 h-3.5" />
+                <div className="inline-flex items-center gap-1 sm:gap-1.5 text-xs sm:text-[13px] font-extrabold tracking-tight leading-tight">
+                  <span>Book Appointment</span>
+                  <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 group-hover:translate-x-0.5 transition-transform" />
+                </div>
+                <div className="text-[10px] sm:text-[11px] font-bold text-white/95 tracking-wide leading-tight mt-0.5 flex items-center gap-1">
+                  <Phone className="w-2.5 h-2.5 fill-current opacity-90" />
+                  <span>{HOSPITAL_INFO.phone}</span>
+                </div>
               </button>
 
               {/* Mobile Hamburger Trigger inside navbar (< lg) */}
@@ -611,16 +618,20 @@ export function Navbar() {
                         setMenuOpen(false);
                         openModal();
                       }}
-                      className="w-full py-3 rounded-xl text-center text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] block shadow-md cursor-pointer"
+                      className="w-full py-2.5 px-4 rounded-xl text-center text-xs font-bold text-white bg-[#E94B1C] hover:bg-[#A83218] block shadow-md cursor-pointer"
                     >
-                      Book Appointment Online
+                      <div className="font-extrabold text-[13px]">Book Appointment</div>
+                      <div className="text-[11px] text-white/95 font-semibold mt-0.5 flex items-center justify-center gap-1">
+                        <Phone className="w-3 h-3 fill-current" />
+                        <span>{HOSPITAL_INFO.phone}</span>
+                      </div>
                     </button>
                   </div>
                 </div>
               </div>
 
               <div className="p-5 border-t border-[#E9D8CE] bg-[#FFF9F3] text-xs text-[#756860]">
-                Behind Ambedkar Bhavan, 9th Cross Road, Sai Nagar, Anantapur
+                Sainagar, 9th Cross, Anantapur - 515001
               </div>
             </motion.div>
           </div>

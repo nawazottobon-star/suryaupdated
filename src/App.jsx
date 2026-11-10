@@ -4,7 +4,6 @@ import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
 import { MobileBottomBar } from "./components/layout/MobileBottomBar";
 import { FloatingActionButtons } from "./components/layout/FloatingActionButtons";
-import { FloatingQRWidget } from "./components/layout/FloatingQRWidget";
 import { ScrollToTop } from "./components/layout/ScrollToTop";
 import { AppointmentModalProvider } from "./context/AppointmentModalContext";
 
@@ -39,11 +38,8 @@ export function App() {
           {/* 4. Reusable Navbar that appears consistently on every page */}
           <Navbar />
 
-          {/* Persistent Floating Quick-Action Bar (Right Middle: Call, WhatsApp) */}
+          {/* Persistent Floating Quick-Action Bar (Call, WhatsApp, Maps & QR Code) */}
           <FloatingActionButtons />
-
-          {/* Persistent Floating Google Maps QR Widget (Right Bottom: shakes to draw attention) */}
-          <FloatingQRWidget />
 
           {/* Route Pages Container */}
           <main className="w-full flex-1 pb-18 lg:pb-0">

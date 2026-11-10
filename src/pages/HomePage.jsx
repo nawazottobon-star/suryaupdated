@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { FounderStorySection } from "../components/home/FounderStorySection";
 import { SpecialtiesScrollSection } from "../components/home/SpecialtiesScrollSection";
 import { FacilitiesServicesSection } from "../components/home/FacilitiesServicesSection";
+import { SpecialtiesDoctorsPoster } from "../components/home/SpecialtiesDoctorsPoster";
 import { TestimonialCarousel } from "../components/home/TestimonialCarousel";
 import { InsuranceCashlessSection } from "../components/home/InsuranceCashlessSection";
 
@@ -21,10 +22,13 @@ export function HomePage() {
       {/* Section 3: Facilities & Services (Real Photos & Video Walkthroughs) */}
       <FacilitiesServicesSection />
 
-      {/* Section 4: Patient Stories & Verified Testimonials Carousel */}
+      {/* Section 4: Verified Specialists & Doctors (Left-to-Right Scrolling Marquee) */}
+      <SpecialtiesDoctorsPoster />
+
+      {/* Section 5: Patient Stories & Verified Testimonials Carousel */}
       <TestimonialCarousel />
 
-      {/* Section 5: Insurance & Cashless Partners (24 Partners Grid) */}
+      {/* Section 6: Insurance & Cashless Partners (24 Partners Grid) */}
       <InsuranceCashlessSection />
     </div>
   );

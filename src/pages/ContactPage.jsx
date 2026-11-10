@@ -24,7 +24,7 @@ export function ContactPage() {
       <PageHero
         eyebrow="LOCATION & CONTACT"
         title="Contact Surya Hospital"
-        description="We are here to help you. Call our friendly front desk, enquire about doctor visiting hours, or visit our hospital behind Ambedkar Bhavan in Sai Nagar, Anantapur."
+        description="We are here to help you. Call our friendly front desk, enquire about doctor visiting hours, or visit our hospital at Sainagar, 9th Cross, Anantapur - 515001."
         breadcrumbs={[{ label: "Contact" }]}
         badge="Sai Nagar, Anantapur"
       >
@@ -153,7 +153,7 @@ export function ContactPage() {
                     Find Surya Hospital on Google Maps
                   </h3>
                   <p className="text-xs text-[#756860]">
-                    #12-3-367, 9th Cross, Sai Nagar (behind Ambedkar Bhavan), Anantapur - 515004
+                    Sainagar, 9th Cross, Anantapur - 515001
                   </p>
                 </div>
 
@@ -196,7 +196,7 @@ export function ContactPage() {
 
               {/* Location Landmark Note */}
               <div className="p-3 rounded-xl bg-white border border-[#E9D8CE] flex items-center justify-between text-xs text-[#756860]">
-                <span>Landmark: Behind Ambedkar Bhavan, 9th Cross, Sai Nagar</span>
+                <span>Location: Sainagar, 9th Cross, Anantapur - 515001</span>
                 <span className="font-bold text-[#C63D1B]">Open 24/7 for Casualty</span>
               </div>
             </div>

@@ -93,7 +93,7 @@ export function InsuranceCashlessSection() {
               </div>
             </div>
             <a
-              href="mailto:insurancedesksuryahospital@gmail.com"
+              href="mailto:suryahospitalatp@gmail.com"
               className="shrink-0 px-5 py-2.5 rounded-full text-xs font-bold text-white bg-gradient-to-r from-[#E94B1C] to-[#C63D1B] hover:from-[#C63D1B] hover:to-[#A83218] transition-all shadow-xs"
             >
               Email Insurance Desk

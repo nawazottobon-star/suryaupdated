@@ -42,7 +42,7 @@ export function Footer() {
             <div className="flex items-start gap-2.5 text-xs text-[#62666D] pt-2">
               <MapPin className="w-4 h-4 text-[#A84328] shrink-0 mt-0.5" />
               <p className="leading-relaxed">
-                #12-3-367, 9th Cross, Sai Nagar, Ananthapuramu - 515004
+                Sainagar, 9th Cross, Anantapur - 515001
               </p>
             </div>
           </div>
@@ -85,8 +85,8 @@ export function Footer() {
 
               <div className="flex items-start gap-2">
                 <Mail className="w-4 h-4 text-[#A84328] shrink-0 mt-0.5" />
-                <a href="mailto:insurancedesksuryahospital@gmail.com" className="hover:text-[#A84328] break-all">
-                  insurancedesksuryahospital@gmail.com
+                <a href="mailto:suryahospitalatp@gmail.com" className="hover:text-[#A84328] break-all">
+                  suryahospitalatp@gmail.com
                 </a>
               </div>
 
@@ -117,7 +117,7 @@ export function Footer() {
                 </div>
                 <div>
                   <div className="text-xs font-bold text-[#1A1D20]">Surya Hospital</div>
-                  <div className="text-[10px] text-[#62666D]">Sai Nagar / Behind Ambedkar Bhavan</div>
+                  <div className="text-[10px] text-[#62666D]">Sainagar, 9th Cross, Anantapur - 515001</div>
                 </div>
               </div>
 

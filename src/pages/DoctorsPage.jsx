@@ -47,6 +47,7 @@ export function DoctorsPage() {
     "Urology",
     "General Surgery",
     "Psychiatry",
+    "Dermatology",
   ];
 
   const quickSymptoms = [

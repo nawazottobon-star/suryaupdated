@@ -9,20 +9,20 @@
 export const HOSPITAL_INFO = {
   name: "Surya Hospital",
   tagline: "Comprehensive Healthcare. Compassionate Care.",
-  locationShort: "Sai Nagar, Anantapur, Andhra Pradesh",
-  fullAddress: "#12-3-367, 9th Cross, Sai Nagar, Ananthapuramu - 515004",
-  landmark: "9th Cross, Sai Nagar",
-  city: "Ananthapuramu",
+  locationShort: "Sainagar, 9th Cross, Anantapur - 515001",
+  fullAddress: "Sainagar, 9th Cross, Anantapur - 515001",
+  landmark: "9th Cross, Sainagar",
+  city: "Anantapur",
   state: "Andhra Pradesh",
-  pincode: "515004",
+  pincode: "515001",
   country: "India",
   phone: "+91 85009 04999",
   phoneRaw: "+918500904999",
   emergencyHelpline: "+91 85009 04999",
-  email: "insurancedesksuryahospital@gmail.com",
+  email: "suryahospitalatp@gmail.com",
   websiteUrl: "https://suryahospital.co",
-  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Surya+Hospital+9th+Cross+Sai+Nagar+Ananthapuramu+515004",
-  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Surya+Hospital+12-3-367+9th+Cross+Sai+Nagar+Ananthapuramu+515004",
+  mapsUrl: "https://www.google.com/maps/search/?api=1&query=Surya+Hospital+9th+Cross+Sainagar+Anantapur+515001",
+  directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Surya+Hospital+9th+Cross+Sainagar+Anantapur+515001",
   googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3859.9880157973417!2d77.59954007584145!3d14.681146775027598!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb14b036573c9bf%3A0x6b301c23ce08253a!2sAmbedkar%20Bhavan%2C%20Sai%20Nagar%2C%20Anantapur%2C%20Andhra%20Pradesh%20515001!5e0!3m2!1sen!2sin!4v1718000000000!5m2!1sen!2sin",
 
   timing: {
@@ -47,7 +47,7 @@ export const HOSPITAL_INFO = {
     },
     {
       title: "Easy to Reach",
-      desc: "Conveniently located behind Ambedkar Bhavan on 9th Cross Road in Sai Nagar, making visits simple for local and visiting families.",
+      desc: "Conveniently located at Sainagar, 9th Cross, Anantapur - 515001, making visits simple for local and visiting families.",
     },
     {
       title: "Experienced Doctors & Staff",
@@ -289,12 +289,12 @@ export const HOSPITAL_INFO = {
 
     // Pulmonology
     {
-      id: "dr-sudhindra",
-      name: "Dr. Sudhindra",
+      id: "dr-yashovardhan",
+      name: "Dr. Yashovardhan",
       designation: "Consultant Pulmonologist & Chest Physician",
       department: "Pulmonology",
-      qualifications: "MD TB & RD",
-      experience: "Senior Consultant Pulmonologist & Respiratory Specialist",
+      qualifications: "MD Pulmonology",
+      experience: "Consultant Pulmonologist & Respiratory Specialist",
       image: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80",
       opdTimings: "Mon – Sat: 09:30 AM – 01:30 PM & 05:00 PM – 08:00 PM",
@@ -305,26 +305,7 @@ export const HOSPITAL_INFO = {
         "Pneumonia, Bronchitis & Chronic Cough",
         "Sleep Apnea, Snoring & Pulmonary Function Testing",
       ],
-      bio: "Dr. Sudhindra is a seasoned respiratory specialist with deep expertise in managing tuberculosis, obstructive airway disorders, and acute lung infections.",
-    },
-    {
-      id: "dr-k-muralidhar-reddy",
-      name: "Dr. K. Muralidhar Reddy",
-      designation: "Consultant Pulmonologist",
-      department: "Pulmonology",
-      qualifications: "DNB",
-      experience: "Consultant Pulmonologist & Critical Care Specialist",
-      image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80",
-      fallbackImage: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80",
-      opdTimings: "Mon – Sat: 10:00 AM – 02:00 PM & 05:30 PM – 08:30 PM",
-      status: "Specialist",
-      specialties: [
-        "Interstitial Lung Diseases (ILD) & Fibrosis",
-        "Bronchoscopy & Pleural Fluid Management",
-        "Post-Viral Respiratory Illnesses & Breathlessness",
-        "Critical Respiratory & ICU Care",
-      ],
-      bio: "Dr. K. Muralidhar Reddy provides advanced pulmonology care, focusing on chronic lung conditions, diagnostic bronchoscopy, and ICU respiratory management.",
+      bio: "Dr. Yashovardhan is an experienced chest physician and pulmonology specialist offering dedicated diagnosis, allergy screening, and management for acute and chronic respiratory conditions.",
     },
 
     // Anesthesia & Intensivist
@@ -350,23 +331,23 @@ export const HOSPITAL_INFO = {
 
     // Oncology
     {
-      id: "dr-vishnupriya",
-      name: "Dr. Vishnupriya",
+      id: "dr-sudheer",
+      name: "Dr. Sudheer",
       designation: "Consultant Medical Oncologist",
       department: "Oncology",
       qualifications: "DM Oncology",
       experience: "Consultant Medical Oncologist & Cancer Care Specialist",
-      image: "https://images.unsplash.com/photo-1594824813583-057088bdf20a?auto=format&fit=crop&w=800&q=80",
-      fallbackImage: "https://images.unsplash.com/photo-1594824813583-057088bdf20a?auto=format&fit=crop&w=800&q=80",
+      image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80",
+      fallbackImage: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80",
       opdTimings: "Mon – Sat: 10:00 AM – 02:00 PM & 05:00 PM – 07:30 PM",
       status: "Specialist",
       specialties: [
         "Chemotherapy & Targeted Immunotherapy",
         "Cancer Screening, Staging & Diagnosis",
-        "Solid Tumors & Hematological Malignancies",
+        "Solid Tumors & Hematological Care",
         "Palliative Cancer Care & Symptom Relief",
       ],
-      bio: "Dr. Vishnupriya provides compassionate and evidence-based cancer consultations, guiding patients through early detection, chemotherapy regimens, and holistic supportive therapy.",
+      bio: "Dr. Sudheer provides compassionate and evidence-based cancer consultations, guiding patients through early detection, chemotherapy regimens, and supportive cancer care.",
     },
 
     // Neurology
@@ -392,42 +373,23 @@ export const HOSPITAL_INFO = {
 
     // Urology
     {
-      id: "dr-y-harinath-reddy",
-      name: "Dr. Y. Harinath Reddy",
+      id: "dr-bhanu-kiran",
+      name: "Dr. Bhanu Kiran",
       designation: "Consultant Urologist & Andrologist",
       department: "Urology",
       qualifications: "MS, MCH (Urology)",
-      experience: "Senior Consultant Urological Surgeon",
+      experience: "Consultant Urologist & Endourologist",
       image: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80",
       fallbackImage: "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=800&q=80",
-      opdTimings: "Mon – Sat: 09:30 AM – 01:00 PM & 04:30 PM – 08:00 PM",
+      opdTimings: "Mon – Sat: 10:00 AM – 02:00 PM & 05:00 PM – 08:30 PM",
       status: "Specialist",
       specialties: [
         "Kidney, Ureter & Bladder Stones (Laser & Endourology)",
         "Prostate Enlargement (BPH) & TURP Surgeries",
-        "Urinary Incontinence & Urinary Tract Infections",
+        "Urinary Tract Infections & Incontinence Care",
         "Men's Health & Male Fertility Care",
       ],
-      bio: "Dr. Y. Harinath Reddy has deep surgical expertise in minimally invasive urology, laser kidney stone removal, and comprehensive treatment for urinary tract and prostate disorders.",
-    },
-    {
-      id: "dr-b-rajashekar",
-      name: "Dr. B. Rajashekar",
-      designation: "Consultant Urologist",
-      department: "Urology",
-      qualifications: "MS, MCH (Urology)",
-      experience: "Consultant Urologist & Renal Transplant Surgeon",
-      image: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80",
-      fallbackImage: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=800&q=80",
-      opdTimings: "Mon – Sat: 10:30 AM – 02:00 PM & 05:30 PM – 08:30 PM",
-      status: "Specialist",
-      specialties: [
-        "Laser Stone Fragmentation (URSL / PCNL / RIRS)",
-        "Reconstructive Urological Surgeries",
-        "Pediatric Urology & Congenital Anomalies",
-        "Uro-Oncology (Bladder & Kidney Cancers)",
-      ],
-      bio: "Dr. B. Rajashekar provides advanced clinical and surgical urology care, focusing on modern laser treatments for kidney stones, reconstructive procedures, and urinary tract disorders.",
+      bio: "Dr. Bhanu Kiran provides advanced clinical and surgical urology care, specializing in modern laser treatments for kidney stones, prostate health, and urinary tract disorders.",
     },
 
     // General Surgery
@@ -450,25 +412,6 @@ export const HOSPITAL_INFO = {
       ],
       bio: "Dr. Sai Swaroop specializes in keyhole laparoscopic surgeries, offering prompt surgical recovery, minimal pain, and expert care for digestive and abdominal surgical conditions.",
     },
-    {
-      id: "dr-sushanth",
-      name: "Dr. Sushanth",
-      designation: "Consultant General Surgeon",
-      department: "General Surgery",
-      qualifications: "MS General Surgery",
-      experience: "Consultant General & Trauma Surgeon",
-      image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80",
-      fallbackImage: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80",
-      opdTimings: "Mon – Sat: 10:00 AM – 02:00 PM & 05:30 PM – 08:30 PM",
-      status: "Specialist",
-      specialties: [
-        "Emergency Surgical Interventions & Trauma Care",
-        "Diabetic Foot Ulcer Debridement & Wound Care",
-        "Thyroid & Breast Lump Investigations & Surgery",
-        "Abdominal Surgeries & Intestinal Obstruction",
-      ],
-      bio: "Dr. Sushanth is an experienced general surgeon known for thorough pre-operative assessments, meticulous surgical technique, and compassionate post-operative recovery support.",
-    },
 
     // Psychiatry
     {
@@ -489,6 +432,27 @@ export const HOSPITAL_INFO = {
         "Addiction De-addiction & Counseling Support",
       ],
       bio: "Dr. V. Sashanka provides compassionate, confidential psychiatric evaluations and treatments, helping individuals overcome anxiety, depression, stress, and behavioral health challenges.",
+    },
+
+    // Dermatology
+    {
+      id: "dr-sunil",
+      name: "Dr. Sunil",
+      designation: "Consultant Dermatologist & Cosmetologist",
+      department: "Dermatology",
+      qualifications: "MD Dermatology",
+      experience: "Consultant Dermatologist & Skin Specialist",
+      image: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80",
+      fallbackImage: "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=800&q=80",
+      opdTimings: "Mon – Sat: 10:00 AM – 01:30 PM & 05:00 PM – 08:00 PM",
+      status: "Specialist",
+      specialties: [
+        "Skin Allergy, Eczema & Psoriasis Care",
+        "Acne, Scars & Pigmentation Treatments",
+        "Hair Fall & Scalp Disorders (Trichology)",
+        "Fungal, Bacterial & Viral Skin Infections",
+      ],
+      bio: "Dr. Sunil specializes in comprehensive clinical dermatology, providing targeted diagnoses and therapies for chronic skin ailments, allergic reactions, hair fall, and aesthetic skincare.",
     },
   ],
 

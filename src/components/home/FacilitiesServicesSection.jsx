@@ -23,17 +23,59 @@ import { HOSPITAL_INFO } from "../../constants/hospitalData";
  * - Live looping video walkthrough right on Card #1 of each department
  * - Distinct, authentic clinical photography on remaining cards (NO duplicate photos)
  * - Dynamic grid: 3-column layout for 3 items, 4-column layout for 4 items
- * - Clean card visual: No badge clutter on top of cards, clean clinical title & icon at bottom
+ * - Clean card visual: No center play icon blocking the video, clean clinical title & icon at bottom
  * - Replaced bullet points with an elegant, cohesive clinical explanation note
- * - Removed "Inquire Surgical Availability" button completely
  * - Left curved arc navigation spine with real circular thumbnails
  * - Portaled video & photo modals with unmissable "Back to Home" button & body scroll lock
  */
 
 const CLINICAL_DEPARTMENTS = [
   {
-    id: "surgical-care",
+    id: "reception-care",
     index: "01",
+    shortName: "Reception & Desk",
+    thumb: "/facilities/reception-desk.jpg",
+    titlePrefix: "Warm & Efficient ",
+    titleHighlight: "Reception & Patient Desk",
+    description:
+      "A friendly, seamless welcoming desk designed to guide patients through consultations, quick registrations, cashless insurance help, and comfortable waiting spaces.",
+    clinicalNote:
+      "Immediate, compassionate front-desk assistance with token coordination, insurance desk guidance, and hospital floor navigation so you feel supported the moment you arrive.",
+    items: [
+      {
+        id: "reception-video",
+        type: "video",
+        title: "Reception & Lounge Walkthrough",
+        description:
+          "Take a live video walkthrough of Surya Hospital's reception lounge, showing the patient coordination desk, inquiry counter, and welcoming seating area.",
+        videoUrl: "/facilities/reception-tour.mp4",
+        poster: "/facilities/reception-desk.jpg",
+        icon: Video,
+      },
+      {
+        id: "reception-desk-photo",
+        type: "photo",
+        title: "Central Helpdesk & Inquiries",
+        description:
+          "Dedicated patient registration counter staffed with courteous coordinators assisting with tokens, doctor appointment slots, and patient files.",
+        photo: "/facilities/reception-desk.jpg",
+        icon: Sparkles,
+      },
+      {
+        id: "reception-lounge-photo",
+        type: "photo",
+        title: "Patient & Family Waiting Lounge",
+        description:
+          "Clean, air-conditioned waiting environment with comfortable seating, water stations, and clear directional signboards for a stress-free wait.",
+        photo: "/facilities/reception-lounge.jpg",
+        icon: BedDouble,
+      },
+      
+    ],
+  },
+  {
+    id: "surgical-care",
+    index: "02",
     shortName: "Surgical Care",
     thumb: "/facilities/20261104_124719.jpg",
     titlePrefix: "Advanced ",
@@ -84,7 +126,7 @@ const CLINICAL_DEPARTMENTS = [
   },
   {
     id: "critical-care",
-    index: "02",
+    index: "03",
     shortName: "Critical Care (ICU / ICCU)",
     thumb: "/facilities/20261104_125515.jpg",
     titlePrefix: "Multi-Bed ",
@@ -114,15 +156,6 @@ const CLINICAL_DEPARTMENTS = [
         icon: Activity,
       },
       {
-        id: "gas-photo",
-        type: "photo",
-        title: "Central Medical Gas Lines",
-        description:
-          "Direct piped medical gases supplying pure oxygen, compressed medical air, and high-vacuum suction to every ICU bed station without interruption.",
-        photo: "/facilities/20261104_125528.jpg",
-        icon: ShieldCheck,
-      },
-      {
         id: "scrub-photo",
         type: "photo",
         title: "Sterile Scrub Barrier",
@@ -135,7 +168,7 @@ const CLINICAL_DEPARTMENTS = [
   },
   {
     id: "diagnostics",
-    index: "03",
+    index: "04",
     shortName: "Diagnostics & Imaging",
     thumb: "/facilities/20261104_130828.jpg",
     titlePrefix: "High-Frequency ",
@@ -150,7 +183,7 @@ const CLINICAL_DEPARTMENTS = [
         type: "video",
         title: "Digital X-Ray Suite Tour",
         description:
-          "Video walkthrough inside the high-frequency digital radiography examination suite and lead-shielded control room.",
+          "Interactive video walkthrough inside our shielded radiological room, highlighting the high-frequency digital X-Ray tube and motorized floating tabletop.",
         videoUrl: "/facilities/xray-tour.mp4",
         poster: "/facilities/20261104_130828.jpg",
         icon: Video,
@@ -177,7 +210,7 @@ const CLINICAL_DEPARTMENTS = [
   },
   {
     id: "pathology",
-    index: "04",
+    index: "05",
     shortName: "Pathology & Lab Services",
     thumb: "/facilities/20261104_130555.jpg",
     titlePrefix: "24/7 Automated ",
@@ -210,7 +243,7 @@ const CLINICAL_DEPARTMENTS = [
   },
   {
     id: "inpatient",
-    index: "05",
+    index: "06",
     shortName: "Inpatient Care",
     thumb: "/facilities/20261104_123927.jpg",
     titlePrefix: "Deluxe Private ",
@@ -243,7 +276,7 @@ const CLINICAL_DEPARTMENTS = [
   },
 ];
 
-const CURVE_OFFSETS = [8, 40, 62, 40, 8]; // horizontal px shift along the curved arc trajectory
+const CURVE_OFFSETS = [8, 30, 48, 54, 38, 12]; // horizontal px shift along the curved arc trajectory for 6 departments
 
 export function FacilitiesServicesSection() {
   const [activeDeptIdx, setActiveDeptIdx] = useState(0);
@@ -314,7 +347,8 @@ export function FacilitiesServicesSection() {
             })}
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 items-stretch">
+          {/* ── Desktop Cockpit Layout: Curved Arc Spine (Left) + Console Workspace (Right) ── */}
+          <div className="flex flex-col lg:flex-row items-stretch gap-6 lg:gap-8">
 
             {/* ── Desktop Left: Curved Arc Navigation Spine ── */}
             <div className="hidden lg:flex lg:w-[315px] xl:w-[345px] shrink-0 relative flex-col justify-between py-2 pr-3 border-r border-[#EADBCE]">
@@ -329,7 +363,7 @@ export function FacilitiesServicesSection() {
                     animation: arcDashFlow 3s linear infinite;
                   }
                 `}</style>
-                <svg className="w-full h-[420px]" viewBox="0 0 140 420" fill="none">
+                <svg className="w-full h-[470px]" viewBox="0 0 140 470" fill="none">
                   <defs>
                     <linearGradient id="arcTrackGradient" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stopColor="#0284C7" stopOpacity="0.3" />
@@ -342,7 +376,7 @@ export function FacilitiesServicesSection() {
 
                   {/* Soft outer halo */}
                   <path
-                    d="M 32 6 Q 34 15, 36 24 Q 52 70, 68 117 Q 84 163, 90 210 Q 84 257, 68 303 Q 52 350, 36 396 Q 34 405, 32 414"
+                    d="M 32 6 Q 34 20, 38 45 Q 54 100, 70 160 Q 86 220, 92 270 Q 86 325, 70 380 Q 52 425, 34 460"
                     stroke="#0284C7"
                     strokeWidth="4"
                     strokeOpacity="0.15"
@@ -353,7 +387,7 @@ export function FacilitiesServicesSection() {
 
                   {/* High-tech pulsing dashed track passing through node centers */}
                   <path
-                    d="M 32 6 Q 34 15, 36 24 Q 52 70, 68 117 Q 84 163, 90 210 Q 84 257, 68 303 Q 52 350, 36 396 Q 34 405, 32 414"
+                    d="M 32 6 Q 34 20, 38 45 Q 54 100, 70 160 Q 86 220, 92 270 Q 86 325, 70 380 Q 52 425, 34 460"
                     stroke="url(#arcTrackGradient)"
                     strokeWidth="1.75"
                     strokeDasharray="4 4"
@@ -365,7 +399,7 @@ export function FacilitiesServicesSection() {
               </div>
 
               {/* Department nodes arranged physically along the curved arc trajectory */}
-              <div className="h-[420px] relative z-10 flex flex-col justify-between">
+              <div className="h-[470px] relative z-10 flex flex-col justify-between">
                 {CLINICAL_DEPARTMENTS.map((dept, idx) => {
                   const isActive = activeDeptIdx === idx;
                   const offset = CURVE_OFFSETS[idx];
@@ -381,7 +415,7 @@ export function FacilitiesServicesSection() {
                     >
                       {/* Circular Thumbnail Node */}
                       <div
-                        className={`relative w-12 h-12 rounded-full overflow-hidden shrink-0 transition-all duration-300 ${
+                        className={`relative w-11 h-11 rounded-full overflow-hidden shrink-0 transition-all duration-300 ${
                           isActive
                             ? "ring-[2.5px] ring-[#0284C7] ring-offset-2 ring-offset-white shadow-[0_0_20px_rgba(2,132,199,0.35)] scale-110 z-20"
                             : "ring-1 ring-[#D8C7B8] group-hover:ring-[#0284C7]/60 opacity-80 group-hover:opacity-100 group-hover:scale-105 z-10 shadow-xs"
@@ -390,83 +424,64 @@ export function FacilitiesServicesSection() {
                         <img
                           src={dept.thumb}
                           alt={dept.shortName}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                        <div
-                          className={`absolute inset-0 transition-colors duration-300 ${
-                            isActive
-                              ? "bg-transparent"
-                              : "bg-black/10 group-hover:bg-transparent"
-                          }`}
+                          className="w-full h-full object-cover"
                         />
                       </div>
 
-                      {/* Label / Active Capsule Pill */}
-                      {isActive ? (
-                        <div className="flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-gradient-to-r from-[#E0F2FE] via-[#BAE6FD]/60 to-white/90 border border-[#0284C7]/40 shadow-[0_2px_12px_rgba(2,132,199,0.18)] transition-all duration-300 z-20">
-                          <span className="relative flex h-2 w-2 shrink-0">
-                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0284C7] opacity-75" />
-                            <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0284C7] shadow-[0_0_8px_#38bdf8]" />
-                          </span>
-                          <span className="text-xs xl:text-sm font-bold text-[#0C4A6E] tracking-wide truncate max-w-[180px]">
-                            {dept.shortName}
-                          </span>
-                        </div>
-                      ) : (
-                        <div className="flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-200 z-10">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#94A3B8] group-hover:bg-[#0284C7] transition-colors shrink-0" />
-                          <span className="text-xs xl:text-[13px] font-medium text-[#475569] group-hover:text-[#0F172A] transition-colors truncate max-w-[170px]">
-                            {dept.shortName}
-                          </span>
-                        </div>
-                      )}
+                      {/* Interactive Text Pill */}
+                      <div
+                        className={`inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-300 ${
+                          isActive
+                            ? "bg-[#E0F2FE] text-[#0369A1] shadow-[0_4px_16px_rgba(2,132,199,0.22)] border border-[#0284C7] scale-102"
+                            : "bg-[#F8FAFC] text-[#475569] hover:bg-[#F1F5F9] hover:text-[#0F172A] border border-[#CBD5E1]"
+                        }`}
+                      >
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full shrink-0 ${
+                            isActive ? "bg-[#0284C7] animate-pulse" : "bg-[#94A3B8]"
+                          }`}
+                        />
+                        <span className="truncate max-w-[170px] xl:max-w-[200px]">
+                          {dept.shortName}
+                        </span>
+                      </div>
                     </div>
                   );
                 })}
               </div>
-
-              {/* 24/7 Helpline indicator at bottom of spine */}
-              <div className="pt-4 border-t border-[#EADBCE] flex items-center gap-2.5">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <a
-                  href={`tel:${HOSPITAL_INFO.phoneRaw}`}
-                  className="text-[11px] font-semibold text-[#475569] hover:text-[#0F172A] transition flex items-center gap-1"
-                >
-                  <Phone className="w-3 h-3 text-[#E94B1C]" />
-                  <span>24/7 Helpline: {HOSPITAL_INFO.phone}</span>
-                </a>
-              </div>
             </div>
 
-            {/* ── Desktop Right: Clinical Stage (Header + Real Cards + Clinical Explanation) ── */}
+            {/* ── Right: Active Department Clinical Console Workspace ── */}
             <div className="flex-1 flex flex-col justify-between min-w-0">
 
-              {/* 1. Header Information */}
-              <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF0E6] text-[#E94B1C] text-[11px] font-extrabold uppercase tracking-wider mb-2.5 border border-[#FADCCB]">
-                  <Sparkles className="w-3.5 h-3.5 text-[#E94B1C]" />
-                  <span>SERVICES &amp; CLINICAL FACILITIES</span>
+              {/* 1. Header Row */}
+              <div className="flex flex-col sm:flex-row sm:items-baseline justify-between gap-2 pb-3 border-b border-[#EADBCE]">
+                <div>
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold tracking-tight text-[#14233C]">
+                    <span>{currentDept.titlePrefix}</span>
+                    <span className="text-[#0284C7]">{currentDept.titleHighlight}</span>
+                  </h3>
+                  <p className="mt-1 text-xs sm:text-[13px] text-[#475569] max-w-2xl font-normal leading-relaxed">
+                    {currentDept.description}
+                  </p>
                 </div>
-
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold tracking-tight text-[#14233C] leading-tight">
-                  {currentDept.titlePrefix}
-                  <span className="bg-gradient-to-r from-[#E94B1C] via-[#FF6B35] to-[#E94B1C] bg-clip-text text-transparent">
-                    {currentDept.titleHighlight}
-                  </span>
-                </h2>
-
-                <p className="mt-2 text-xs sm:text-[13px] text-[#4A5568] leading-relaxed font-normal max-w-4xl">
-                  {currentDept.description}
-                </p>
               </div>
 
-              {/* 2. Authentic Media Cards (Fixed, consistent card dimensions across all subsections) */}
-              <div className="my-5 sm:my-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 min-h-[320px] sm:min-h-[340px] xl:min-h-[360px]">
+              {/* 2. Visual Media Showcase Cards */}
+              <div
+                className={`my-5 grid gap-3 sm:gap-4 ${
+                  currentDept.items.length === 2
+                    ? "grid-cols-1 sm:grid-cols-2"
+                    : currentDept.items.length === 3
+                    ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                    : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                }`}
+              >
                 {currentDept.items.map((item) => {
-                  const ItemIcon = item.icon;
-                  const isVideo = item.type === "video";
+                  const ItemIcon = item.icon || Activity;
 
-                  if (isVideo) {
+                  // Card 1 (Video Walkthrough): Live looping video preview right inside the card WITHOUT blocking center play icon
+                  if (item.type === "video") {
                     return (
                       <div
                         key={item.id}
@@ -476,7 +491,7 @@ export function FacilitiesServicesSection() {
                             title: item.title,
                           })
                         }
-                        className="group relative h-[310px] sm:h-[330px] xl:h-[350px] rounded-2xl overflow-hidden bg-[#0A1626] border border-[#CBD5E1] hover:border-[#0284C7] shadow-[0_6px_20px_rgba(20,35,60,0.08)] hover:shadow-[0_12px_32px_rgba(2,132,199,0.2)] transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                        className="group relative h-[310px] sm:h-[330px] xl:h-[350px] rounded-2xl overflow-hidden bg-[#0A1626] border border-[#CBD5E1] hover:border-[#0284C7] shadow-[0_6px_20px_rgba(20,35,60,0.08)] hover:shadow-[0_12px_32px_rgba(2,132,199,0.2)] transition-all duration-300 flex flex-col justify-end cursor-pointer"
                       >
                         {/* Live looping video preview inside the card */}
                         <video
@@ -492,12 +507,7 @@ export function FacilitiesServicesSection() {
                         {/* Gentle overlay for readability */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent pointer-events-none" />
 
-                        {/* Center: Frosted Glass Glowing Play Button */}
-                        <div className="relative z-10 flex-1 flex items-center justify-center">
-                          <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#E94B1C] group-hover:bg-[#D43B0E] text-white flex items-center justify-center shadow-[0_0_25px_rgba(233,75,28,0.6)] group-hover:scale-115 transition-transform duration-300 border-2 border-white ring-4 ring-black/40">
-                            <Play className="w-5 h-5 fill-white ml-0.5" />
-                          </div>
-                        </div>
+
 
                         {/* Bottom Info Strip: Clean Icon and Title */}
                         <div className="relative z-10 p-3 bg-gradient-to-t from-black/90 via-black/70 to-transparent">
@@ -522,24 +532,24 @@ export function FacilitiesServicesSection() {
                         setActivePhotoModal({
                           src: item.photo,
                           title: item.title,
-                          description: item.description,
+                          desc: item.description,
                         })
                       }
-                      className="group relative h-[310px] sm:h-[330px] xl:h-[350px] rounded-2xl overflow-hidden bg-[#0A1626] border border-[#CBD5E1] hover:border-[#0284C7] shadow-[0_6px_20px_rgba(20,35,60,0.08)] hover:shadow-[0_12px_32px_rgba(2,132,199,0.2)] transition-all duration-300 flex flex-col justify-end cursor-pointer"
+                      className="group relative h-[310px] sm:h-[330px] xl:h-[350px] rounded-2xl overflow-hidden bg-white border border-[#CBD5E1] hover:border-[#0284C7] shadow-[0_6px_20px_rgba(20,35,60,0.08)] hover:shadow-[0_12px_32px_rgba(2,132,199,0.2)] transition-all duration-300 flex flex-col justify-end cursor-pointer"
                     >
-                      {/* Full-bleed, Bright, High-Definition Photo */}
+                      {/* Full-bleed authentic clinical photograph */}
                       <img
                         src={item.photo}
                         alt={item.title}
-                        className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-108 transition-transform duration-700 brightness-[1.03]"
+                        className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-[1.02] contrast-[1.02]"
                         loading="lazy"
                       />
 
-                      {/* Gentle bottom-only gradient for title readability */}
-                      <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/90 via-black/60 to-transparent pointer-events-none" />
+                      {/* Gentle dark gradient overlay at bottom for maximum title readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent pointer-events-none" />
 
-                      {/* Bottom Info Strip: Clean Icon & Title */}
-                      <div className="relative z-10 p-3 bg-gradient-to-t from-black/90 to-transparent">
+                      {/* Bottom Info Strip: Clean Icon and Title */}
+                      <div className="relative z-10 p-3 bg-gradient-to-t from-black/90 via-black/70 to-transparent">
                         <div className="flex items-center gap-2.5">
                           <div className="w-7 h-7 rounded-lg bg-[#0284C7]/25 text-[#38BDF8] flex items-center justify-center shrink-0 border border-[#0284C7]/40">
                             <ItemIcon className="w-3.5 h-3.5" />
@@ -554,30 +564,37 @@ export function FacilitiesServicesSection() {
                 })}
               </div>
 
-              {/* 3. Bottom Clinical Explanation Note */}
-              <div className="pt-3.5 border-t border-[#EADBCE] flex items-center gap-3">
-                <span className="w-2 h-2 rounded-full bg-[#0284C7] shrink-0 animate-pulse" />
-                <p className="text-xs sm:text-[13px] text-[#475569] leading-relaxed font-medium">
-                  {currentDept.clinicalNote}
-                </p>
+              {/* 3. Bottom Row: Explanation note + 24/7 Helpline */}
+              <div className="pt-3 border-t border-[#EADBCE] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+                <div className="flex items-center gap-2 text-[#475569] font-normal leading-relaxed">
+                  <span className="w-2 h-2 rounded-full bg-[#0284C7] shrink-0" />
+                  <span>{currentDept.clinicalNote}</span>
+                </div>
+
+                <div className="flex items-center gap-2 shrink-0 text-[#64748B]">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+                  <span>24/7 Helpline:</span>
+                  <a
+                    href={`tel:${HOSPITAL_INFO.phoneRaw}`}
+                    className="font-bold text-[#0284C7] hover:underline"
+                  >
+                    {HOSPITAL_INFO.phone}
+                  </a>
+                </div>
               </div>
 
             </div>
-
           </div>
-
         </div>
 
       </div>
 
-      {/* ── 5. Fullscreen Video Walkthrough Modal (Portaled to document.body) ── */}
+      {/* ── 5. Fullscreen Video Lightbox Modal with UNMISSABLE "Back to Home" Button ── */}
       {typeof document !== "undefined" &&
         activeVideoModal &&
         createPortal(
           <div
-            role="dialog"
-            aria-modal="true"
-            className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-black/92 backdrop-blur-md p-3 sm:p-6"
+            className="fixed inset-0 z-[99999] bg-black/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
             onClick={() => setActiveVideoModal(null)}
           >
             {/* Top Navigation Bar: Guaranteed Visible at All Viewports */}
@@ -585,9 +602,9 @@ export function FacilitiesServicesSection() {
               className="fixed top-0 left-0 right-0 z-[100000] px-4 py-3 bg-gradient-to-b from-black/90 via-black/60 to-transparent flex items-center justify-between pointer-events-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center gap-2.5">
-                <span className="w-2.5 h-2.5 rounded-full bg-[#E94B1C] animate-pulse" />
-                <span className="text-white font-serif font-bold text-xs sm:text-sm tracking-wide">
+              <div className="flex items-center gap-2 text-white">
+                <Video className="w-4 h-4 text-[#FF8A3D]" />
+                <span className="text-xs sm:text-sm font-bold truncate max-w-[200px] sm:max-w-md">
                   Surya Hospital • {activeVideoModal.title}
                 </span>
               </div>
@@ -604,9 +621,9 @@ export function FacilitiesServicesSection() {
               </button>
             </div>
 
-            {/* Modal Card Centered */}
+            {/* Video Player Card */}
             <div
-              className="relative w-full max-w-[380px] sm:max-w-[440px] max-h-[82vh] mt-10 flex flex-col bg-[#14233C] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.8)] border border-white/20"
+              className="relative w-full max-w-4xl max-h-[85vh] bg-[#0A1626] rounded-2xl overflow-hidden border border-white/20 shadow-2xl flex flex-col z-[99999] mt-12"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Header */}
@@ -624,13 +641,19 @@ export function FacilitiesServicesSection() {
                 </button>
               </div>
 
-              {/* Video container cleanly constrained */}
+              {/* Video container cleanly constrained with zero audio */}
               <div className="relative flex-1 min-h-0 bg-black flex items-center justify-center overflow-hidden">
                 <video
                   src={activeVideoModal.src}
                   controls
                   autoPlay
+                  muted
+                  defaultMuted
                   playsInline
+                  onVolumeChange={(e) => {
+                    e.currentTarget.muted = true;
+                    e.currentTarget.volume = 0;
+                  }}
                   className="max-h-[60vh] w-auto h-auto object-contain"
                 />
               </div>
@@ -659,23 +682,22 @@ export function FacilitiesServicesSection() {
         activePhotoModal &&
         createPortal(
           <div
-            role="dialog"
-            aria-modal="true"
-            className="fixed inset-0 z-[99999] flex flex-col items-center justify-center bg-black/94 backdrop-blur-md p-3 sm:p-6"
+            className="fixed inset-0 z-[99999] bg-black/95 backdrop-blur-md flex items-center justify-center p-3 sm:p-6"
             onClick={() => setActivePhotoModal(null)}
           >
-            {/* Top Navigation Bar */}
+            {/* Top Navigation Bar: Guaranteed Visible at All Viewports */}
             <div
               className="fixed top-0 left-0 right-0 z-[100000] px-4 py-3 bg-gradient-to-b from-black/90 via-black/60 to-transparent flex items-center justify-between pointer-events-auto"
               onClick={(e) => e.stopPropagation()}
             >
-              <div className="flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-sky-400 animate-pulse" />
-                <span className="text-white font-serif font-bold text-xs sm:text-sm">
-                  Surya Hospital • Clinical Equipment Photography
+              <div className="flex items-center gap-2 text-white">
+                <Activity className="w-4 h-4 text-[#38BDF8]" />
+                <span className="text-xs sm:text-sm font-bold truncate max-w-[200px] sm:max-w-md">
+                  Surya Hospital • {activePhotoModal.title}
                 </span>
               </div>
 
+              {/* High-visibility "Back to Home" pill */}
               <button
                 type="button"
                 onClick={() => setActivePhotoModal(null)}
@@ -687,16 +709,16 @@ export function FacilitiesServicesSection() {
               </button>
             </div>
 
-            {/* Lightbox Container */}
+            {/* Photo Lightbox Card */}
             <div
-              className="relative w-full max-w-2xl max-h-[88vh] mt-10 flex flex-col bg-[#071524] rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_70px_rgba(0,0,0,0.9)] border border-sky-500/30"
+              className="relative w-full max-w-4xl max-h-[85vh] bg-[#0A1626] rounded-2xl overflow-hidden border border-white/20 shadow-2xl flex flex-col z-[99999] mt-12"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Modal Header */}
-              <div className="flex items-center justify-between px-5 py-3.5 bg-black/80 border-b border-white/10 shrink-0">
-                <h3 className="text-sm sm:text-base font-bold text-white truncate">
+              {/* Header */}
+              <div className="flex items-center justify-between px-4 py-3 bg-black/80 border-b border-white/10 shrink-0">
+                <span className="text-xs sm:text-sm font-bold text-white truncate pr-2">
                   {activePhotoModal.title}
-                </h3>
+                </span>
                 <button
                   type="button"
                   onClick={() => setActivePhotoModal(null)}
@@ -707,32 +729,28 @@ export function FacilitiesServicesSection() {
                 </button>
               </div>
 
-              {/* High-Resolution Image Display */}
-              <div className="relative flex-1 min-h-0 bg-black flex items-center justify-center p-3">
+              {/* Photo viewport */}
+              <div className="relative flex-1 min-h-0 bg-black flex items-center justify-center p-2 overflow-hidden">
                 <img
                   src={activePhotoModal.src}
                   alt={activePhotoModal.title}
-                  className="max-h-[58vh] w-auto h-auto object-contain rounded-xl shadow-2xl"
+                  className="max-h-[60vh] w-auto h-auto object-contain rounded-lg"
                 />
               </div>
 
-              {/* Description & Action Footer */}
-              <div className="p-4 bg-[#0A1A2E] border-t border-white/10 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shrink-0">
-                <div className="max-w-md">
-                  <p className="text-xs text-slate-300 leading-relaxed">
-                    {activePhotoModal.description}
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-2 shrink-0">
-                  <button
-                    type="button"
-                    onClick={() => setActivePhotoModal(null)}
-                    className="text-xs font-bold text-slate-400 hover:text-white px-3 py-1.5 rounded-full bg-white/10 hover:bg-white/20 transition cursor-pointer"
-                  >
-                    Close ✕
-                  </button>
-                </div>
+              {/* Clinical Description & Dual Exit */}
+              <div className="px-4 py-3 bg-black/80 border-t border-white/10 flex flex-col sm:flex-row sm:items-center justify-between gap-2 shrink-0">
+                <p className="text-xs text-slate-300 font-normal leading-relaxed max-w-2xl">
+                  {activePhotoModal.desc}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => setActivePhotoModal(null)}
+                  className="inline-flex items-center gap-1 text-xs font-bold text-[#38BDF8] hover:text-[#0284C7] hover:underline cursor-pointer shrink-0"
+                >
+                  <span>Back to Home Page</span>
+                  <ArrowRight className="w-3 h-3" />
+                </button>
               </div>
             </div>
           </div>,

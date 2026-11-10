@@ -371,7 +371,7 @@ export function AppointmentPage() {
                 <div>
                   <h4 className="text-xs font-black text-[#14233C]">Surya Hospital Campus</h4>
                   <p className="text-[11px] text-[#7A6E65] mt-0.5">
-                    Behind Ambedkar Bhavan, 9th Cross Road, Sai Nagar, Anantapur - 515004
+                    Sainagar, 9th Cross, Anantapur - 515001
                   </p>
                 </div>
               </div>

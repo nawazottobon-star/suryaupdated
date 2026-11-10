@@ -587,4 +587,126 @@ img {
     animation-play-state: paused;
     transform: scale(1.05);
   }
+
+  /* Synchronized Attention-Grabbing Shake & Lighting Flare for Floating Contact Icons (Call, WhatsApp, Maps) */
+  @keyframes floatingIconsShake {
+    0%, 55%, 100% {
+      transform: rotate(0deg) translate(0, 0) scale(1);
+    }
+    60% {
+      transform: rotate(-10deg) translate(-2px, -2px) scale(1.1);
+    }
+    65% {
+      transform: rotate(10deg) translate(2px, -1px) scale(1.1);
+    }
+    70% {
+      transform: rotate(-8deg) translate(-2px, 1px) scale(1.08);
+    }
+    75% {
+      transform: rotate(8deg) translate(2px, 0) scale(1.08);
+    }
+    80% {
+      transform: rotate(-5deg) translate(-1px, 0) scale(1.05);
+    }
+    85% {
+      transform: rotate(5deg) translate(1px, 0) scale(1.05);
+    }
+    90% {
+      transform: rotate(-2deg) translate(0, 0) scale(1.02);
+    }
+    95% {
+      transform: rotate(1deg) translate(0, 0) scale(1);
+    }
+  }
+
+  /* Radiant Lighting Flares for Call (Orange), WhatsApp (Green), Maps (Blue/Red) */
+  @keyframes glowLightCall {
+    0%, 55%, 100% {
+      box-shadow: 0 4px 14px rgba(233, 75, 28, 0.16);
+      filter: drop-shadow(0 0 0px transparent);
+    }
+    60%, 82% {
+      box-shadow: 0 0 0 4px rgba(233, 75, 28, 0.35), 0 0 24px 6px rgba(233, 75, 28, 0.65), 0 0 40px 10px rgba(242, 106, 33, 0.4);
+      filter: drop-shadow(0 0 8px rgba(233, 75, 28, 0.75));
+    }
+  }
+
+  @keyframes glowLightWhatsApp {
+    0%, 55%, 100% {
+      box-shadow: 0 4px 14px rgba(0, 168, 132, 0.16);
+      filter: drop-shadow(0 0 0px transparent);
+    }
+    60%, 82% {
+      box-shadow: 0 0 0 4px rgba(0, 168, 132, 0.35), 0 0 24px 6px rgba(37, 211, 102, 0.65), 0 0 40px 10px rgba(0, 168, 132, 0.4);
+      filter: drop-shadow(0 0 8px rgba(0, 168, 132, 0.75));
+    }
+  }
+
+  @keyframes glowLightMaps {
+    0%, 55%, 100% {
+      box-shadow: 0 4px 14px rgba(26, 115, 232, 0.16);
+      filter: drop-shadow(0 0 0px transparent);
+    }
+    60%, 82% {
+      box-shadow: 0 0 0 4px rgba(66, 133, 244, 0.35), 0 0 24px 6px rgba(66, 133, 244, 0.65), 0 0 40px 10px rgba(234, 67, 53, 0.4);
+      filter: drop-shadow(0 0 8px rgba(66, 133, 244, 0.75));
+    }
+  }
+
+  /* Shimmering Light Sweep Beam across each button */
+  @keyframes lightSweep {
+    0%, 55% {
+      opacity: 0;
+      transform: translateX(-120%) rotate(25deg);
+    }
+    60% {
+      opacity: 0.9;
+    }
+    85% {
+      opacity: 0.9;
+      transform: translateX(140%) rotate(25deg);
+    }
+    90%, 100% {
+      opacity: 0;
+      transform: translateX(140%) rotate(25deg);
+    }
+  }
+
+  .floating-light-call {
+    animation: floatingIconsShake 2.8s ease-in-out infinite, glowLightCall 2.8s ease-in-out infinite;
+    transform-origin: center center;
+  }
+
+  .floating-light-whatsapp {
+    animation: floatingIconsShake 2.8s ease-in-out infinite, glowLightWhatsApp 2.8s ease-in-out infinite;
+    transform-origin: center center;
+  }
+
+  .floating-light-maps {
+    animation: floatingIconsShake 2.8s ease-in-out infinite, glowLightMaps 2.8s ease-in-out infinite;
+    transform-origin: center center;
+  }
+
+  .floating-light-call:hover,
+  .floating-light-whatsapp:hover,
+  .floating-light-maps:hover {
+    animation-play-state: paused !important;
+  }
+
+  .floating-light-beam {
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      105deg,
+      transparent 35%,
+      rgba(255, 255, 255, 0.85) 50%,
+      transparent 65%
+    );
+    animation: lightSweep 2.8s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: 9999px;
+  }
 }
