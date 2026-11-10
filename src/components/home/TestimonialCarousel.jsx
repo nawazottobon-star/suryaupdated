@@ -1,3 +1,4 @@
+import { CrowdCanvas } from "../ui/skiper39";
 import React from "react";
 import { motion } from "framer-motion";
 import { Quote, MessageSquareQuote, CheckCircle2 } from "lucide-react";
@@ -240,6 +241,16 @@ export function TestimonialCarousel() {
           animation-play-state: paused !important;
         }
       `}</style>
+
+      {/* ── Skiper39 Canvas Crowd Background ── */}
+      <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-30 mix-blend-multiply z-0">
+        <CrowdCanvas
+          src="/images/peeps/all-peeps.png"
+          rows={15}
+          cols={7}
+          className="absolute inset-0 w-full h-full pointer-events-none"
+        />
+      </div>
 
       {/* Ambient background glows matching Surya Hospital palette */}
       <div className="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-br from-orange-100/30 via-amber-100/20 to-transparent blur-3xl pointer-events-none" />
