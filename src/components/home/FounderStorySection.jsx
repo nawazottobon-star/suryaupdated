@@ -37,7 +37,7 @@ export function FounderStorySection() {
     <section
       ref={sectionRef}
       id="founder-story"
-      className="relative w-full pt-24 sm:pt-28 lg:pt-32 xl:pt-36 pb-12 sm:pb-14 lg:pb-16 overflow-hidden scroll-mt-20"
+      className="relative w-full pt-20 sm:pt-24 lg:pt-32 xl:pt-36 pb-12 sm:pb-14 lg:pb-16 overflow-hidden scroll-mt-20"
       style={{
         background:
           "radial-gradient(ellipse at 50% 28%, #FFFDF9 0%, #FAF2EB 38%, #F4E8DC 75%, #ECD9CC 100%)",
@@ -87,35 +87,35 @@ export function FounderStorySection() {
         </motion.div>
 
         {/* ── MAIN 3-COLUMN SHOWCASE: NO SLOPPY LOGOS, DEEP 3D PLINTH ── */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-6 xl:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-6 xl:gap-8 items-center">
           
-          {/* 1. LEFT COLUMN: OUR PHILOSOPHY */}
+          {/* 1. LEFT COLUMN: OUR PHILOSOPHY (Upper on Mobile: order-1; Left column on Desktop: lg:order-1) */}
           <motion.div
             variants={itemVariants}
-            className="lg:col-span-3 xl:col-span-3 flex flex-col justify-center order-2 lg:order-1 text-left px-2 sm:px-4"
+            className="lg:col-span-3 xl:col-span-3 flex flex-col justify-center order-1 lg:order-1 text-center lg:text-left px-3 sm:px-4 max-w-xl mx-auto lg:mx-0"
           >
             {/* Eyebrow */}
-            <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#E94B1C] mb-2 font-sans">
+            <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#E94B1C] mb-1.5 sm:mb-2 font-sans">
               OUR PHILOSOPHY
             </div>
 
             {/* Heading */}
-            <h2 className="font-serif text-2xl sm:text-[28px] font-bold text-[#14233C] leading-snug mb-4">
+            <h2 className="font-serif text-xl sm:text-2xl lg:text-[28px] font-bold text-[#14233C] leading-snug mb-2.5 sm:mb-4">
               Care begins with listening.
             </h2>
 
             {/* Body Quote */}
-            <p className="text-[14.5px] sm:text-[15px] text-[#4A5568] leading-[1.8] font-normal">
+            <p className="text-[14px] sm:text-[15px] text-[#4A5568] leading-relaxed sm:leading-[1.8] font-normal">
               I believe in a holistic approach to healthcare — combining modern medical practices with empathy, and always keeping the individual needs and concerns of my patients at the center.
             </p>
           </motion.div>
 
-          {/* 2. CENTER COLUMN: 3D DOCTOR WITH THE AUTHENTIC CURVED PEDESTAL PLINTH */}
+          {/* 2. CENTER COLUMN: 3D DOCTOR (Smaller & Compact on Mobile: order-2; Center Hero on Desktop: lg:order-2) */}
           <motion.div
             variants={itemVariants}
-            className="lg:col-span-6 xl:col-span-6 flex flex-col items-center justify-center order-1 lg:order-2"
+            className="lg:col-span-6 xl:col-span-6 flex flex-col items-center justify-center order-2 lg:order-2 my-1 lg:my-0"
           >
-            <div className="relative w-full max-w-[620px] xl:max-w-[660px] mx-auto group">
+            <div className="relative w-full max-w-[280px] xs:max-w-[310px] sm:max-w-[360px] md:max-w-[440px] lg:max-w-[620px] xl:max-w-[660px] mx-auto group">
               {/* Subtle back-glow */}
               <div className="absolute inset-0 -m-4 rounded-3xl bg-gradient-to-b from-[#E94B1C]/[0.06] via-transparent to-[#FF8A3D]/[0.04] blur-2xl pointer-events-none" />
 
@@ -142,23 +142,23 @@ export function FounderStorySection() {
             </div>
           </motion.div>
 
-          {/* 3. RIGHT COLUMN: THE JOURNEY */}
+          {/* 3. RIGHT COLUMN: THE JOURNEY (Follows Doctor on Mobile: order-3; Right column on Desktop: lg:order-3) */}
           <motion.div
             variants={itemVariants}
-            className="lg:col-span-3 xl:col-span-3 flex flex-col justify-center order-3 text-left px-2 sm:px-4"
+            className="lg:col-span-3 xl:col-span-3 flex flex-col justify-center order-3 lg:order-3 text-left px-3 sm:px-4 max-w-xl mx-auto lg:mx-0"
           >
             {/* Eyebrow */}
-            <div className="text-xs font-extrabold uppercase tracking-[0.18em] text-[#E94B1C] mb-2 font-sans">
+            <div className="text-[11px] sm:text-xs font-extrabold uppercase tracking-[0.18em] text-[#E94B1C] mb-1.5 sm:mb-2 font-sans">
               THE JOURNEY
             </div>
 
             {/* Heading */}
-            <h2 className="font-serif text-2xl sm:text-[28px] font-bold text-[#14233C] leading-snug mb-4">
+            <h2 className="font-serif text-xl sm:text-2xl lg:text-[28px] font-bold text-[#14233C] leading-snug mb-2.5 sm:mb-4">
               From a small clinic to a complete care center.
             </h2>
 
             {/* 3 Story Paragraphs (100% Live Editable Text) */}
-            <div className="space-y-3.5 text-[14px] text-[#4A5568] leading-[1.72]">
+            <div className="space-y-3 sm:space-y-3.5 text-[13.5px] sm:text-[14px] text-[#4A5568] leading-relaxed sm:leading-[1.72]">
               <p>
                 With over <strong className="font-bold text-[#14233C]">15 years</strong> of patient care experience and qualifications of <strong className="font-bold text-[#14233C]">MBBS, MD from Manipal Academy of Higher Education</strong>, I have treated and cared for <strong className="font-bold text-[#14233C]">approximately 1 lakh patients</strong>.
               </p>

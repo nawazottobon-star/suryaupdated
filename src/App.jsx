@@ -2,7 +2,6 @@ import React, { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { Navbar } from "./components/layout/Navbar";
 import { Footer } from "./components/layout/Footer";
-import { MobileBottomBar } from "./components/layout/MobileBottomBar";
 import { FloatingActionButtons } from "./components/layout/FloatingActionButtons";
 import { ScrollToTop } from "./components/layout/ScrollToTop";
 import { AppointmentModalProvider } from "./context/AppointmentModalContext";
@@ -42,7 +41,7 @@ export function App() {
           <FloatingActionButtons />
 
           {/* Route Pages Container */}
-          <main className="w-full flex-1 pb-18 lg:pb-0">
+          <main className="w-full flex-1">
             <Suspense fallback={<RouteFallback />}>
               <Routes>
                 <Route path="/" element={<HomePage />} />
@@ -68,9 +67,6 @@ export function App() {
 
           {/* Reusable Institutional Footer on every page */}
           <Footer />
-
-          {/* Dedicated Sticky Mobile Bottom Bar (< 992px) */}
-          <MobileBottomBar />
         </div>
       </AppointmentModalProvider>
     </BrowserRouter>

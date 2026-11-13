@@ -6,7 +6,6 @@ import {
   ChevronRight,
   Phone,
   Calendar,
-  Sparkles,
 } from "lucide-react";
 import { APPROVED_SPECIALITIES } from "../../constants/specialitiesData";
 import { HOSPITAL_INFO } from "../../constants/hospitalData";
@@ -98,7 +97,8 @@ export function SpecialtiesScrollSection() {
     const container = scrollContainerRef.current;
     if (!container) return;
     isInteractingRef.current = true;
-    container.scrollBy({ left: -360, behavior: "smooth" });
+    const scrollAmount = window.innerWidth < 640 ? 280 : 360;
+    container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
     setTimeout(() => {
       isInteractingRef.current = false;
     }, 800);
@@ -108,7 +108,8 @@ export function SpecialtiesScrollSection() {
     const container = scrollContainerRef.current;
     if (!container) return;
     isInteractingRef.current = true;
-    container.scrollBy({ left: 360, behavior: "smooth" });
+    const scrollAmount = window.innerWidth < 640 ? 280 : 360;
+    container.scrollBy({ left: scrollAmount, behavior: "smooth" });
     setTimeout(() => {
       isInteractingRef.current = false;
     }, 800);
@@ -117,7 +118,7 @@ export function SpecialtiesScrollSection() {
   return (
     <section
       id="hospital-specialities"
-      className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FFF9F3] via-[#FFF3E8]/40 to-[#FFF9F3] text-[#262626] overflow-hidden border-t border-[#F0E4DA]"
+      className="relative py-8 sm:py-16 lg:py-20 bg-gradient-to-b from-[#FFF9F3] via-[#FFF3E8]/40 to-[#FFF9F3] text-[#262626] overflow-hidden border-t border-[#F0E4DA]"
     >
       {/* Ambient background glow accents */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-gradient-to-b from-[#E94B1C]/[0.04] to-transparent blur-3xl pointer-events-none" />
@@ -125,11 +126,11 @@ export function SpecialtiesScrollSection() {
 
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* ── 1. Section Header ── */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8 sm:mb-10">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-5 sm:mb-10">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#FFF0E6] text-[#E94B1C] text-[11px] font-extrabold uppercase tracking-wider mb-2.5 border border-[#FADCCB]">
-              <Sparkles className="w-3.5 h-3.5 text-[#E94B1C]" />
-              <span>12 Clinical Specialities • Comprehensive Inpatient & OPD</span>
+            <div className="inline-flex items-center px-3.5 py-1 rounded-full bg-[#FFF0E6] text-[#E94B1C] text-[10px] xs:text-[11px] sm:text-xs font-bold uppercase tracking-wider mb-2.5 border border-[#FADCCB] whitespace-nowrap">
+              <span className="sm:hidden">12 Clinical Specialities • Inpatient & OPD</span>
+              <span className="hidden sm:inline">12 Clinical Specialities • Comprehensive Inpatient & OPD</span>
             </div>
 
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-serif font-bold text-[#14233C] tracking-tight leading-tight">
@@ -236,13 +237,13 @@ export function SpecialtiesScrollSection() {
 function SpecialtyCard({ specialty, onBookConsultation }) {
   // Highlight 2-3 most recognized patient symptoms / conditions
   const topConditions = (specialty.conditions || []).slice(0, 3).map((item) => {
-    return item.split(" and ")[0].split(",")[0].trim();
+    return item.split(" and ")[0].split(",")[0].split("(")[0].trim();
   });
 
   return (
-    <div className="w-[310px] sm:w-[340px] shrink-0 mx-2.5 sm:mx-3 bg-white rounded-2xl sm:rounded-3xl border border-[#EFE5DC] overflow-hidden shadow-[0_4px_16px_rgba(40,20,10,0.04)] hover:shadow-[0_12px_32px_rgba(233,75,28,0.15)] hover:border-[#E94B1C]/50 transition-all duration-300 flex flex-col group">
+    <div className="w-[260px] xs:w-[280px] sm:w-[340px] shrink-0 mx-2 sm:mx-3 bg-white rounded-2xl sm:rounded-3xl border border-[#EFE5DC] overflow-hidden shadow-[0_4px_16px_rgba(40,20,10,0.04)] hover:shadow-[0_12px_32px_rgba(233,75,28,0.15)] hover:border-[#E94B1C]/50 transition-all duration-300 flex flex-col group">
       {/* ── 1. Clean Top Image Showcase (No badges, No artificial numbering) ── */}
-      <div className="relative h-44 sm:h-48 w-full bg-gradient-to-br from-[#FFF5ED] via-[#FDF3E9] to-[#F7EAE0] overflow-hidden flex items-center justify-center">
+      <div className="relative h-32 xs:h-36 sm:h-48 w-full bg-gradient-to-br from-[#FFF5ED] via-[#FDF3E9] to-[#F7EAE0] overflow-hidden flex items-center justify-center">
         {/* Department Visual Image */}
         <img
           src={specialty.heroImage}
@@ -252,56 +253,61 @@ function SpecialtyCard({ specialty, onBookConsultation }) {
         />
 
         {/* Soft natural bottom vignette for headline contrast */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/15 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/15 to-transparent pointer-events-none" />
 
         {/* Specialty Name */}
-        <div className="absolute bottom-3 left-4 right-4 z-10">
-          <h3 className="font-serif text-xl sm:text-[22px] font-bold text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] leading-tight">
+        <div className="absolute bottom-2.5 sm:bottom-3 left-3 sm:left-4 right-3 sm:right-4 z-10">
+          <h3 className="font-serif text-lg sm:text-[22px] font-bold text-white drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)] leading-tight">
             {specialty.name}
           </h3>
         </div>
       </div>
 
       {/* ── 2. Card Body Content ── */}
-      <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+      <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between">
         <div>
           {/* Short Description */}
-          <p className="text-xs sm:text-[13px] text-[#5A687A] leading-relaxed line-clamp-2 mb-3.5 font-normal">
+          <p className="text-[12px] sm:text-[13px] text-[#5A687A] leading-relaxed line-clamp-2 mb-2.5 sm:mb-3.5 font-normal">
             {specialty.shortDescription}
           </p>
 
           {/* Quick Conditions Pill Tags */}
-          <div className="mb-4">
-            <span className="text-[10px] uppercase font-bold tracking-wider text-[#998A82] block mb-1.5">
+          <div className="mb-2.5 sm:mb-4">
+            <span className="text-[9.5px] sm:text-[10px] uppercase font-bold tracking-wider text-[#998A82] block mb-1 sm:mb-1.5">
               Key Care Areas:
             </span>
-            <div className="flex flex-wrap gap-1.5">
-              {topConditions.map((condition, idx) => (
-                <span
-                  key={idx}
-                  className="px-2 py-0.5 rounded-md bg-[#FFF5EE] border border-[#F6DFD2] text-[#8C3A20] text-[11px] font-medium leading-tight line-clamp-1"
-                >
-                  {condition}
-                </span>
-              ))}
+            <div className="flex flex-wrap gap-1 sm:gap-1.5">
+              {topConditions.map((condition, idx) => {
+                const shortCondition = condition.length > 22 ? condition.slice(0, 20) + "…" : condition;
+                return (
+                  <span
+                    key={idx}
+                    className={`px-2 py-0.5 rounded-md bg-[#FFF5EE] border border-[#F6DFD2] text-[#8C3A20] text-[10px] sm:text-[11px] font-medium leading-tight ${
+                      idx === 2 ? "hidden sm:inline-block" : ""
+                    }`}
+                  >
+                    {shortCondition}
+                  </span>
+                );
+              })}
             </div>
           </div>
         </div>
 
         {/* ── 3. Bottom Action Buttons ── */}
-        <div className="pt-3 border-t border-[#F5EDE6] flex items-center justify-between gap-2">
+        <div className="pt-2.5 sm:pt-3 border-t border-[#F5EDE6] flex items-center justify-between gap-2">
           <Link
             to={`/specialities/${specialty.slug}`}
-            className="inline-flex items-center gap-1.5 text-xs font-bold text-[#14233C] group-hover:text-[#E94B1C] transition-colors"
+            className="inline-flex items-center gap-1.5 text-[11px] sm:text-xs font-bold text-[#14233C] group-hover:text-[#E94B1C] transition-colors"
           >
             <span>View Speciality</span>
-            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+            <ArrowRight className="w-3 sm:w-3.5 h-3 sm:h-3.5 group-hover:translate-x-1 transition-transform" />
           </Link>
 
           <button
             type="button"
             onClick={onBookConsultation}
-            className="px-3 py-1.5 rounded-full text-[11px] font-bold text-[#E94B1C] bg-[#FFF0E6] hover:bg-[#E94B1C] hover:text-white transition-all cursor-pointer border border-[#FADCCB]"
+            className="px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-full text-[10px] sm:text-[11px] font-bold text-[#E94B1C] bg-[#FFF0E6] hover:bg-[#E94B1C] hover:text-white transition-all cursor-pointer border border-[#FADCCB]"
           >
             Book OPD
           </button>
